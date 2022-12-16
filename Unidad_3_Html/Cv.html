@@ -4,39 +4,38 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../Unidad_4_Css/Cv.css">
     <title>Cv Claudia Ziemba</title>
 </head>
 <body>
-    <head>
+    <header>
         <h1>Claudia Ziemba</h1>
         <h2>Desarrolladora de software</h2>
         <img src="https://images.unsplash.com/photo-1489424731084-a5d8b219a5bb?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=500&q=20" alt="Foto de perfil de Claudia" />
-    </head>
+        <div class="intro">
+            <p>Soy una desarrolladora entusiasta, y disfruto desarrollar aplicaciones que resuelvan problemas.</p>
+            <p>Me apasiona aprender nuevas tecnologias y enfrentarme a desafios de manera continua para mejorar mis habilidades.</p>
+        </div>
+    </header>
     <main>
-        <div>
+        <div class="main_panel left">
             <div>
-                <p>Soy una desarrolladora entusiasta, y disfruto desarrollar aplicaciones que resuelvan problemas.</p>
-                <p>Me apasiona aprender nuevas tecnologias y enfrentarme a desafios de manera continua para mejorar mis habilidades.</p>
-            </div>
-            <div>
-                <h3>Contacto</h3>
-                <ul>
-                    <li>Celular: 11111111111</li>
-                    <li>Email: <a href="mailto:claudia.ziemba@gmail.com">claudia.ziemba@gmail.com</a></li>
-                    <li>Linkedin: <a href="www.linkedin.com/in/claudiaziemba">linkedin.com/in/claudiaziemba</a></li>
-                    <li>Github: <a href="github.com/ckonata">github.com/ckonata</a></li>
+                <h3 class="title_left">Contacto</h3>
+                <ul class="list_left">
+                    <li><span>Celular:</span> 11111111111</li>
+                    <li><span>Email:</span> <a href="mailto:claudia.ziemba@gmail.com">claudia.ziemba@gmail.com</a></li>
+                    <li><span>Linkedin:</span> <a href="www.linkedin.com/in/claudiaziemba">linkedin.com/in/claudiaziemba</a></li>
+                    <li><span>Github:</span>: <a href="github.com/ckonata">github.com/ckonata</a></li>
                 </ul>
             </div>
             <div>
-                <h3>Habilidades</h3>
-                <ul>
+                <h3 class="title_left">Habilidades</h3>
+                <ul class="list_skill">
                     <li>HTML5</li>
                     <li>CSS</li>
                     <li>SASS</li>
                     <li>BEM</li>
                     <li>Bootstrap</li>
-                </ul>
-                <ul>
                     <li>C#</li>
                     <li>.NET</li>
                     <li>.NET Core</li>
@@ -47,24 +46,27 @@
                 </ul>
             </div>
         </div>
-        <div>
+        <div class="main_panel right">
             <div>
-                <h3>Experiencia Laboral</h3>
+                <h3 class="title_right">Experiencia Laboral</h3>
                 <div>
                     <h4>Desarrolladora .Net</h4>
                     <h5>Urbetrack | Noviembre 2021 - Actualidad</h5>
                     <p>C#,.Net Core, Web API, MVC, EF, SQL Server, Nhibernate, Javascript, Jquery, Azure</p>
                 </div>
+                <hr>
                 <div>
                     <h4>Desarrolladora Web </h4>
                     <h5>Freelance | Enero 2020 - Actualidad</h5>
                     <p>HTML, CSS, JavaScript, Bootstrap, Gulp, Webpack, diseño responsive.</p>
                 </div>
+                <hr>
                 <div>
                     <h4>Desarrolladora .Net FullStack</h4>
                     <h5>Globant | Marzo 2021 - Noviembre 2021</h5>
                     <p>C#,.Net Core, Web API, MVC, EF, SQL Server, CosmosDb , Azure Data Factory, Azure ecosystem. Unit Testing. JavaScript, Angular.</p>
                 </div>
+                <hr>
                 <div>
                     <h4>Desarrolladora .Net Jr</h4>
                     <h5>GlobalNews Group | Junio 2020 - Marzo 2021</h5>
@@ -72,7 +74,7 @@
                 </div>
             </div>
             <div>
-                <h3>Educacion</h3>
+                <h3 class="title_right">Educacion</h3>
                 <div>
                     <h4>Ingenieria en Informatica</h4>
                     <h5>Universidad de Palermo</h5>
@@ -83,7 +85,7 @@
     <footer>
         <h2>Contactame</h2>
         <form action="" method="post">
-            <ul>
+            <ul class="form_list">
                 <li>
                     <label for="fullName">Nombre y Apellido</label>
                     <input type="text" id="fullName" required>
