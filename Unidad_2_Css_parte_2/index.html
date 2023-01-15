@@ -23,5 +23,41 @@
         <div class="box"><p>2</p></div>
         <div class="box"><p>3</p></div>
     </div>
+
+    <script>
+        function fragileItems(shoppingList) {
+            for(let i = 0; i < shoppingList.length; i++){
+                if (shoppingList[i].isFragile === true) 
+                {
+                    console.log(`Item: ${i} es fragil`) 
+                }else 
+                {
+                    console.log(`Item: ${i}`)
+                }
+            }
+        }
+
+        const item1 = {
+            name: "Buzo Dragon Ball Z",
+            size: "XL",
+            price: "300",
+            isFragile: false,
+        }
+        const item2 = {
+            name: "Buzo One piece",
+            size: "L",
+            price: "100",
+            isFragile: false,
+        }
+        const item3 = {
+            name: "Jarra Pokemon",
+            size: "S",
+            price: "800",
+            isFragile: true,
+        }
+        var shoppingList = [item1, item2, item3]
+
+        console.log(fragileItems(shoppingList))
+    </script>
 </body>
 </html>
