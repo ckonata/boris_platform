@@ -64,7 +64,7 @@ nav ul li a:hover{
 .hero{
     background-color: #FF4900;
     padding: 0 20rem;
-    height: 80vh;
+    height: 60vh;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -92,21 +92,24 @@ nav ul li a:hover{
 }
 
 .hero__arrow{
-    margin-top: 3rem;
+    padding-top: 10rem;
     font-size: 3rem;
     animation: bounce 2s infinite;
 }
 
-.hero.hero-black{
+#hero-black{
     background-color: black;
     color: #F1F0EC;
+    display: flex;
+    flex-direction: column;
+    height: 60vh;
 }
 
-.hero.hero-black h1{
+#hero-black h1{
     background-color: black;
 }
 
-.hero.hero-black a{
+#hero-black a{
     color: #FF4900;
     border: 1px solid #FF4900;
     padding: .3rem 1.2rem;
@@ -115,7 +118,7 @@ nav ul li a:hover{
     margin-top: 5rem;
 }
 
-.hero.hero-black a:hover{
+#hero-black a:hover{
     color: #F1F0EC;
     border: 1px solid #F1F0EC;
     transition: ease .8s;
@@ -302,6 +305,7 @@ main{
 
 .updates__container{
     display: flex;
+    justify-content: center;
 }
 
 .updates__item{
@@ -480,6 +484,8 @@ form button{
     background-color: #F1F0EC;
     padding: 0 25rem;
     height: 60vh;
+    display: flex;
+    align-items: center;
 }
 
 .contact h1{
@@ -487,25 +493,32 @@ form button{
     text-transform: uppercase;
     font-size: 5rem;
     text-align: left;
-    padding: 5rem 0 0rem 0;
+    /* padding: 5rem 0 0rem 0; */
+    align-self: flex-start;
 }
 
 .contact p{
     font-weight: 200;
     font-size: 1rem;
     text-align: left;
-    width: 40%;
+    width: 60%;
 }
 
 .contact form{
     margin: 2rem;
 }
 
+.contact__form-item{
+    display: flex;
+    margin-bottom: 1rem;
+}
+
 .contact form label{
     background-color:  #F1F0EC;
     font-weight: 700;
     letter-spacing: 3px;
-    width: 30px;
+    width: 8rem;
+    display: block;
 }
 
 .contact form input{
@@ -522,4 +535,5 @@ form button{
     font-size: 1rem;
     border: 1px solid black;
     padding: .5rem 3rem;
+    width: 100%;
 }
