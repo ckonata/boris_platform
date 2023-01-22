@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Sofia+Sans:wght@100;200;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <title>Boris</title>
+</head>
+    <body>
+        <nav>
+            <div class="navbrand">
+                <a href="index.html"><img src="assets/images/logo-color.png" alt="Logo Boris"></a>
+            </div>
+            <ul>
+                <li><a href="books.html">Libros</a></li>
+                <li><a href="platform.html">Plataforma</a></li>
+                <li><a href="about.html">Sobre Nosotros</a></li>
+                <li><a href="#">Contacto</a></li>
+            </ul>
+        </nav>
+        <div class="contact">
+            <div>
+                <h1>Contactanos</h1>
+                <p>¿Tenes alguna duda, comentario o sugerencia? Completa el formulario y te responderemos a la brevedad.</p>
+            </div>
+            <form action="POST">
+                <div>
+                    <label for="name">Nombre</label>
+                    <input type="text" id="name" name="name" placeholder="Joe Doh">
+                </div>
+                <div>
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" placeholder="jdoe@mail.com">
+                </div>
+                <div>
+                    <label for="subject">Asunto</label>
+                    <input type="subject" id="subject" name="subject" placeholder="Cuentanos de que se trata">
+                </div>
+                <div>
+                    <label for="comment">Comentario</label>
+                    <input type="comment" id="comment" name="comment" placeholder="Escribe tu consulta aqui">
+                </div>
+                <button>Enviar</button>
+            </form>
+        </div>
+        <footer>
+            <div>
+                <h3 class="footer__form">Mantenete al dia con las nuevas publicaciones</h3>
+                <form action="POST">
+                    <div>
+                        <label for="name">Nombre completo</label>
+                        <input type="text" id="name" name="name" placeholder="Joe Doe">
+                    </div>
+                    <div>
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email" placeholder="jdoe@mail.com">
+                    </div>
+                    <button>Suscribirse</button>
+                </form>
+                <div>
+                    <p>Seguinos en nuestras redes</p>
+                    <a href="www.facebook.com/boris"><ion-icon class="social__icon" name="logo-facebook"></ion-icon></a>
+                    <a href="www.twitter.com/boris"><ion-icon class="social__icon" name="logo-twitter"></ion-icon></a>
+                    <a href="www.instagra.com/boris"><ion-icon class="social__icon" name="logo-instagram"></ion-icon></a>
+                </div>
+            </div>
+            <div>
+                <img class="footer__logo" src="assets/images/boris-website-favicon-color.png" alt="Logo boris">
+                <ul>
+                    <li><a href="books.html">Libros</a></li>
+                    <li><a href="platform.html">Plataforma</a></li>
+                    <li><a href="about.html">Sobre Nosotros</a></li>
+                    <li><a href="">Contacto</a></li>
+                </ul>
+                <small>© 2023 Boris.  Todos los derechos reservados.</small>
+                <small>Hecho con (L) por Claudia Ziemba</small>
+            </div>
+        </footer>
+
+        <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+        <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+    </body>
+</html>
