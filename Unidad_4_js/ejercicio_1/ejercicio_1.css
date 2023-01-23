@@ -1,0 +1,35 @@
+main{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container{
+    display: flex;
+}
+
+#pink,
+#yellow,
+#green{
+    cursor: pointer;
+    width: 100px;
+    height: 30px;
+    text-align: center;
+    vertical-align: middle;
+}
+
+p{
+    font-weight: bold;
+}
+
+#pink{
+    background-color: palevioletred;
+}
+
+#yellow{
+    background-color: yellow;
+}
+
+#green{
+    background-color: olivedrab;
+}
