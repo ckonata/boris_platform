@@ -78,9 +78,9 @@ nav ul li a:hover{
 .hero h1{
     font-weight: 700;
     text-transform: uppercase;
-    font-size: 5rem;
+    font-size: 4rem;
     text-align: center;
-    padding: 8rem 0 2rem 0;
+    padding: 3rem 0 2rem 0;
 }
 
 .hero p{
@@ -92,9 +92,13 @@ nav ul li a:hover{
 }
 
 .hero__arrow{
-    padding-top: 10rem;
+    padding-top: 3rem;
     font-size: 3rem;
     animation: bounce 2s infinite;
+}
+
+#hero{
+    display: flex;
 }
 
 #hero-black{
@@ -133,6 +137,7 @@ nav ul li a:hover{
 }
 
 #about{
+    padding-top: 3rem;
     justify-content: center;
 }
 
@@ -153,7 +158,7 @@ nav ul li a:hover{
 main{
     background-color: black;
     color:#F1F0EC;
-    padding: 5rem 18rem;
+    padding: 5rem 10rem;
 }
 
 .main__title{
@@ -582,7 +587,7 @@ form button{
 
 .contact__form-item{
     display: flex;
-    margin-bottom: 1rem;
+    margin-bottom: .5rem;
 }
 
 .access__form-item{
@@ -614,6 +619,7 @@ form button{
 .access__button{
     cursor: pointer;
     color: #FF4900;
+
 }
 
 .access__button:hover{
