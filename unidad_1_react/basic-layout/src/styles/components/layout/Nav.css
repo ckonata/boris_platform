@@ -1,0 +1,40 @@
+nav{
+ background-color: #F1F0EC;
+ display: flex;
+ justify-content: space-between;
+ height: 15vh;
+ align-items: center;
+ padding: 0 2rem;
+}
+
+.navbrand img{
+ width: 10rem;
+}
+
+.navbrand a{
+ margin: 0;
+ padding: 0;
+ text-decoration: none;
+}
+
+nav ul{
+ display: flex;
+}
+
+nav ul li{
+ list-style: none;
+}
+
+nav ul li a{
+ color: black;
+ margin: 0 2rem;
+ text-transform: uppercase;
+ text-decoration: none;
+
+}
+
+nav ul li a:hover{
+ color: #FF4900;
+ font-weight: 400;
+ transition: ease .8s;
+}
