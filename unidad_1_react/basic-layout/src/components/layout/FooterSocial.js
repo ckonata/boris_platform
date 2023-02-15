@@ -1,5 +1,4 @@
 import React from "react";
-import '../../styles/components/layout/Footer.css'
 import { IonIcon } from "@ionic/react";
 import { logoFacebook, logoInstagram, logoTwitter } from "ionicons/icons";
 
