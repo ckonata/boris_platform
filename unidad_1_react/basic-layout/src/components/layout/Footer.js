@@ -2,7 +2,7 @@ import React from 'react';
 import '../../styles/components/layout/Footer.css'
 import { IonIcon } from "@ionic/react";
 import { heartOutline } from "ionicons/icons";
-import { NavItems } from "./NavItems"
+import { Link } from 'react-router-dom'
 import { FooterSocial } from "./FooterSocial"
 
 const Footer = () => {
@@ -27,7 +27,13 @@ const Footer = () => {
         </div>
         <div className="footer__info">
             <img className="footer__logo" src="/images/boris-website-favicon-color.png" alt="Logo boris" />
-            <NavItems />
+            <ul>
+                <li><Link to="/">Home</Link></li>
+                <li><Link to="/courses">Cursos</Link></li>
+                <li><Link to="/platform">Plataforma</Link></li>
+                <li><Link to="/about">Sobre Nosotros</Link></li>
+                <li><Link to="/contact">Contacto</Link></li>
+            </ul>
             <small>© 2023 Boris.  Todos los derechos reservados. Hecho con <IonIcon icon={heartOutline} /> por Claudia Ziemba</small>
         </div>
     </footer>

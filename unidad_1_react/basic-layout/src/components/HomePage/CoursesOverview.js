@@ -3,7 +3,7 @@ import { CourseItem } from "./CourseItem";
 
 const CoursesOverview = () =>{
  return(
-  <div class="courses__container">
+  <div className="courses__container">
    <CourseItem 
     title="Liderazgo de equipos remotos"
     link="courses.html#equipo_remoto"

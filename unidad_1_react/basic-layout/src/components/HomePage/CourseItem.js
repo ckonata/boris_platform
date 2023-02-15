@@ -4,10 +4,10 @@ import { arrowForwardOutline } from "ionicons/icons";
 
 const CourseItem = (props) =>{
  return(
-  <div class="box">
+  <div className="box">
       <h4>{props.title}</h4>
-      <div class="box__link">
-          <a class="link" href={props.link}>Saber mas 
+      <div className="box__link">
+          <a className="link" href={props.link}>Saber mas 
            <IonIcon icon={arrowForwardOutline} className="icon"/>
           </a>
       </div>

@@ -5,7 +5,7 @@ import "../../styles/components/pages/HomePage.css"
 const Main = () =>{
  return(
   <main>
-   <div class="main__title">
+   <div className="main__title">
        <h3>Todo lo que necesitas para comenzar a liderar equipos de trabajo</h3>
        <p>Con la infraestructura de una plataforma que te permite ejercitar habilidades duras como blandas.</p>
    </div>
