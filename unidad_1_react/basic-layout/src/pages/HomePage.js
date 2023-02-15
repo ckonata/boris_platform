@@ -2,6 +2,7 @@ import React from "react";
 import "../styles/components/pages/HomePage.css"
 import { Hero } from "../components/HomePage/Hero"
 import { Main } from "../components/HomePage/Main"
+import { Updates } from "../components/HomePage/Updates";
 
 const HomePage = () => {
  return(
@@ -11,7 +12,7 @@ const HomePage = () => {
         subtitle="Boris es la unica plataforma que te permite acceder a cursos de liderazgo creados por líderes de empresas exitosas"
        />
        <Main />
-        
+       <Updates />
       </>
  );
 }

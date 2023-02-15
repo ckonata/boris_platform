@@ -1,6 +1,5 @@
 import React from "react";
 import { CoursesOverview } from "./CoursesOverview";
-import { Updates } from "./Updates";
 import "../../styles/components/pages/HomePage.css"
 
 const Main = () =>{
@@ -11,7 +10,6 @@ const Main = () =>{
        <p>Con la infraestructura de una plataforma que te permite ejercitar habilidades duras como blandas.</p>
    </div>
    <CoursesOverview />
-   <Updates />
  </main>
  );
 }
