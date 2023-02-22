@@ -371,14 +371,6 @@ main{
  display: flex;
 }
 
-.box__course-right{
- flex-direction: row;
-}
-
-.box__course-left{
- flex-direction: row-reverse;
-}
-
 .box__course_item{
  margin: 0 1rem 0 1rem;
 }

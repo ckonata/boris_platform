@@ -22,7 +22,6 @@ function App() {
           <Route path="courses" element={<Courses />} />
           <Route path="platform" element={<Platform />} />
         </Routes>
-        <HomePage />
         <Footer />
       </BrowserRouter>
       
