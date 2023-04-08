@@ -1,6 +1,6 @@
 const pool = require("./bd.js") ;
 
-// Select
+//Select
 // const employees = pool
 //  .query("SELECT * FROM empleados")
 //  .then((result) => {
