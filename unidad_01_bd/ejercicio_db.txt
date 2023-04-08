@@ -1,5 +1,5 @@
 
-CREATE DATABASE ejercicio;
+CREATE DATABASE empleados;
 
 CREATE TABLE [empleados](
 	[id_emp] [int] IDENTITY(1,1) NOT NULL,
