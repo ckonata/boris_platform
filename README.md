@@ -16,3 +16,5 @@ Librerias utilizadas:
 - Session
 - Connect-flash
 - Bcryptjs
+- Passport
+- Mysql2
