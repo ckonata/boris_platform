@@ -1,7 +1,7 @@
 const loginRouter = require('./routes/admin/login');
 const app = express();
 
-app.use( "admin/login", secured, loginRouter);
+app.use( "/admin/login", secured, loginRouter);
 
 const secured = async (req, res, next) => {
  try {
