@@ -1,0 +1,14 @@
+<form action="/admin/login" method="post">
+  <div class="form-group">
+    <label for="userName">Usuario</label>
+    <input type="name" class="form-control" id="userName" aria-describedby="userHelp" name="name">
+  </div>
+  <div class="form-group">
+    <label for="userPw">Contraseña</label>
+    <input type="password" class="form-control" id="userPw" name="password">
+  </div>
+  {{#if error}}
+  <p>El usuario y/o la contraseña son incorrectos</p>
+  {{/if}}
+  <button id="submitbtn" type="submit" class="btn btn-primary">Ingresar</button>
+</form>
