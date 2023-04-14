@@ -22,20 +22,15 @@ router.post('/', async (req, res, next) => {
    const pw = req.body.password;
    const data = await userModel.getUser(user, pw);
 
-   console.log(data)
-
    if(data === undefined){
     res.render('admin/login', {layout: '/admin/layout', error: true});
    }else{
     req.session.id = data.id;
     req.session.name = data.name;
-
-    console.log(req.session.id)
-    console.log(req.session.name)
     res.redirect('/admin/courses');
    }
   } catch (error) {
-   console.log("error login",error);
+   throw error;
  }
 });
 

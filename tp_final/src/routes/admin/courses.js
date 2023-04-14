@@ -4,7 +4,6 @@ var courseModel = require('../../models/courseModel');
 
 router.get('/', async function(req, res, next) {
  let courses = await courseModel.getCourses();
- console.log("courses", courses)
  res.render('admin/courses', { 
   layout: 'admin/layout',
   usuario: req.session.name,
@@ -19,10 +18,8 @@ router.get('/addCourse', (req, res, next) => {
 
 router.post('/addCourse', async (req, res, next) => {
  try {
-  console.log(req.body)
   if (req.body.name !="" && req.body.description != "") {
    await courseModel.addCourses(req.body);
-   console.log("adddinngg",req.body)
    res.redirect('/admin/courses')
   } else {
    res.render('admin/cursos/addCourse', {
@@ -32,7 +29,6 @@ router.post('/addCourse', async (req, res, next) => {
    });
   }
  }catch (error) {
-  console.log(error)
   res.render('admin/addCourse', {
    layout: 'admin/layout',
    error: true,
@@ -52,11 +48,11 @@ router.post('/updateCourse', async (req, res, next) => {
   let course = {
    name: req.body.name,
    description: req.body.description,
+   imageDescription: req.body.imageDescription,
   }
   await courseModel.updateCourse(course, req.body.id);
   res.redirect('/admin/courses');
  } catch (error) {
-  console.log(error)
   res.render('admin/updateCourse', {
     layout: 'admin/layout',
     error: true,
@@ -66,13 +62,22 @@ router.post('/updateCourse', async (req, res, next) => {
 })
 
 router.get('/updateCourse/:id', async (req, res, next) => {
- const id = req.params.id;
- let course = await courseModel.getCourse(id);
- console.log(course)
- res.render('admin/updateCourse', {
-   layout: 'admin/layout',
-   course
- });
+ try{
+  const id = req.params.id;
+  let course = await courseModel.getCourse(id);
+  console.log(course)
+  res.render('admin/updateCourse', {
+    layout: 'admin/layout',
+    course
+  });
+ }catch(error){
+  console.log(error)
+  res.render('admin/updateCourse', {
+    layout: 'admin/layout',
+    error: true,
+    message: 'No se modifico el curso'
+  })
+ }
 });
 
 module.exports = router;

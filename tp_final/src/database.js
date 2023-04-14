@@ -12,12 +12,4 @@ let pool = mysql.createPool({
 
 pool.query = util.promisify(pool.query);
 
-const employees = pool
- .query("SELECT * FROM courses")
- .then((result) => {
-   // console.log(result);
-   return result;
- });
-
-
 module.exports = pool;

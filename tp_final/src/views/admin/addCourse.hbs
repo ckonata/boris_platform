@@ -1,18 +1,24 @@
-<div class="container" style="margin: 100px auto">
+<div class="container" class="m-3">
  <div class="row">
   <div class="col-6 offset-3">
    <h4>Agregar curso</h4>
    <form action="/admin/courses/addCourse" method="post">
     <div class="form-group">
-     <input type="text" class="form-control" placeholder="Nombre" name="name">
+     <label for="name" class="text-primary fw-bold m-1">Nombre</label>
+     <input id="name" type="text" class="form-control" placeholder="Nombre" name="name">
     </div>
     <div class="form-group">
+     <label for="description" class="text-primary fw-bold m-1">Descripcion</label>
      <textarea type="text" class="form-control" placeholder="Descripcion" name="description"></textarea>
     </div>
     <div class="form-group">
-     <label>Subir imagen: <input type="file" class="form-control" name="image" id="image" /></label>
+     <label class="text-primary fw-bold m-1">Subir imagen: <input type="file" class="form-control" name="image" id="image" /></label>
     </div>
-    <button type="submit" class="btn btn-primary">Guardar</button>
+    <div class="form-group">
+     <label for="imageDescription" class="text-primary fw-bold m-1">Descripcion imagen</label>
+     <input id="imageDescription" type="text" class="form-control" placeholder="Descripcion Imange" name="imageDescription" value="{{course.imageDescription}}"></input>
+    </div>
+    <button type="submit" class="btn btn-primary mt-4">Guardar</button>
    </form>
    {{#if error}}
     <p>{{message}}</p>

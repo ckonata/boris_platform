@@ -22,8 +22,13 @@ const deleteCourse = async (courseId) => {
 };
 
 const updateCourse = async (course, courseId) => {
- let query = 'UPDATE courses SET ? WHERE id = ?';
- return await pool.query(query, [course, courseId]);
+ try{
+  let query = 'UPDATE courses SET ? WHERE id = ?';
+  let updatedCourse = await pool.query(query, [course, courseId]);
+  return updateCourse;
+ }catch(error){
+  throw error;
+ }
 };
 
 module.exports = { getCourses, getCourse, addCourses, deleteCourse, updateCourse };

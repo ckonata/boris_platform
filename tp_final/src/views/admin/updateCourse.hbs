@@ -1,28 +1,32 @@
-<div class="container" style="margin: 100px auto">
+<div class="container mt-3">
  <div class="row">
   <div class="col-6 offset-3">
    <h4>Actualizar Curso</h4>
-   <form action="/admin/courses/updateCourse" method="post" enctype="multipart/form-data">
+   <form action="/admin/courses/updateCourse" method="post">
     <div class="form-group">
      <input type="hidden" value="{{course.id}}" name="id">
     </div>
     <div class="form-group">
-     <input type="text" class="form-control" placeholder="Nombre" name="name" value="{{course.name}}"></input>
+     <label for="name" class="text-primary fw-bold m-1">Nombre</label>
+     <input id="name" type="text" class="form-control" placeholder="Nombre" name="name" value="{{course.name}}"></input>
     </div>
     <div class="form-group">
-     <textarea type="text" class="form-control" placeholder="Descripcion" name="description" value="{{course.description}}"></textarea>
+     <label for="description" class="text-primary fw-bold m-1">Descripcion</label>
+     <textarea id="description" rows="4" cols="50" type="text" class="form-control" placeholder="Descripcion" name="description">{{course.description}}</textarea>
     </div>
     <div class="form-group">
-     <label>Agregar/Actualizar imagen: 
+     <label class="text-primary fw-bold m-1">Agregar/Actualizar imagen: 
       <input type="file" class="form-control" name="image" id="image" />
      </label>
-     <label><input type="checkbox" name="img_delete" id="img_delete" value="1">Eliminar imagen actual</label>
+     <label>
+      <input type="checkbox" name="img_delete" id="img_delete" value="1">Eliminar imagen actual</label>
       <input type="hidden" name="img_original" value="{{course.img_id}}">
     </div>
     <div class="form-group">
-        <input type="text" class="form-control" placeholder="Descripcion Imange" name="imageDescription">{{course.imageDescription}}</input>
+     <label for="imageDescription" class="text-primary fw-bold m-1">Descripcion imagen</label>
+     <input id="imageDescription" type="text" class="form-control" placeholder="Descripcion Imange" name="imageDescription" value="{{course.imageDescription}}"></input>
     </div>
-    <button type="submit" class="btn btn-primary">Guardar</button>
+    <button type="submit" class="btn btn-primary mt-4">Guardar</button>
    </form>
    {{#if error}}
     <p>{{message}}</p>

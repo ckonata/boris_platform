@@ -10,8 +10,6 @@ const session = require('express-session');
 
 const loginRouter = require('./routes/admin/login');
 const coursesRouter = require('./routes/admin/courses');
-const mainRouter = require('./routes/admin/main')
-const indexRouter = require('./routes/index');
 
 const app = express();
 
@@ -20,45 +18,35 @@ app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'hbs');
 
 //configuration app settings
-app.use(logger('dev'));
 app.set("port", process.env.PORT || 4000);
+app.listen(app.get("port"), () => {
+  console.log("Server is running on port", app.get("port"));
+});
+
+app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
-
-// session setup
 app.use(session( {
   secret: 'password123',
   resave: false,
   saveUninitialized: true
-}))
+}));
 
+app.use('/', loginRouter);
+app.use('/admin/login', loginRouter);
 const secured = async (req, res, next) => {
   try {
-     console.log(req.session);
-     console.log(req.session.id);
      if (req.session.id) {
        next();
      } else {res.redirect('/admin/login');}
-   } catch (error) {console.log(error);}
- };
- 
-
-//configuring express-handlebars as hbs
-// app.engine('hbs', hbs.create({
-//   extname: 'hbs',
-//   defaultLayout: 'layout'
-// }).engine)
-// app.set("view engine", ".hbs");
-
-app.use('/', indexRouter);
-// app.use('/users', usersRouter);
-app.use('/admin/login', loginRouter);
+   } catch (error) {
+    throw error
+  }
+};
 app.use('/admin/courses', secured, coursesRouter);
-app.use('/admin/main', secured, mainRouter);
 
-// catch 404 and forward to error handler
 app.use(function(req, res, next) {
   next(createError(404));
 });

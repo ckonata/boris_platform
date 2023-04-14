@@ -1,48 +1,47 @@
-<nav>
- <div class="navbar">
-  <ul>
-   <li><a href="./courses">Cursos</a></li>
-  </ul>
- </div>
-</nav>
-
-<div>
- <p class="text-end"> Usuario: {{user}} <a class="btn btn-danger" href="/admin/login/logout">Cerrar sesión</a></p>
- <div class="col">
-     <h3>Listado de Cursos</h3>
-    <div class="col-6 text-right"></div>
-       <hr>
-    <a href="/admin/courses/addCourse" class="btn btn-success"> <i class="fa fa-plus"></i>Nuevo +</a>
+<div class="container-fluid mt-3">
+ <div class="">
+  <div class="row">
+   <div class="col-9">
+    <div class="row">
+     <div class="col-9">
+      <h3>Listado de Cursos</h3>
+      <a href="/admin/courses/addCourse" class="btn btn-success">Agregar curso <i class="fa fa-plus"></i></a>
+     </div>
+    </div>
+  </div>
+  <div class="row">
+   <div class="col">
+    <table class="table">
+     <thead class="thead-dark">
+      <tr>
+          <th scope="col">Nombre</th>
+          <th scope="col" colspan="2">Descripcion</th>
+          <th scope="col">Imagen</th>   
+          <th scope="col">Descripcion Imagen</th>   
+      </tr>
+     </thead>
+     <tbody>
+         {{#each courses}}
+         <tr>  
+             <td scope="row">{{name}}</td>
+             <td colspan="2">{{description}}</td>
+             <td scope="row">{{imageLocation}}</td>
+             <td scope="row">{{imageDescription}}</td>
+             <td class="text-center">
+                 <a href="/admin/courses/updateCourse/{{id}}" title="Editar" class="btn btn-sm btn-info mt-2"><i class="fa fa-pencil"></i></a>
+                 <a href="/admin/courses/deleteCourse/{{id}}" title="Eliminar" class="btn btn-sm btn-danger mt-2"><i class="fa fa-trash"></i></a>
+             </td>
+         </tr>
+         {{/each}}
+     </tbody>
+  </table>
+   </div>
+  </div>
  </div>
 </div>
 
 <div class="row">
  <div class="col">
-  <table class="tablanovedades"table>
-   <thead class=""thead-dark>
-    <tr>
-        <th scope="col">#</th>
-        <th scope="col">Nombre</th>
-        <th scope="col">Descripcion</th>
-        <th scope="col">Imagen</th>   
-        <th scope="col">Descripcion Imagen</th>   
-    </tr>
-   </thead>
-   <tbody>
-       {{#each courses}}
-       <tr>  
-           <th scope="{{id}}">{{id}}</th>
-           <td>{{name}}</td>
-           <td>{{description}}</td>
-           <td>{{imageLocation}}</td>
-           <td>{{imageDescription}}</td>
-           <td class="text-center">
-               <a href="/admin/courses/updateCourse/{{id}}" title="Editar" class="btn btn-sm btn-secondary"><i class="fa fa-pencil"></i></a>
-               <a href="/admin/courses/deleteCourse/{{id}}" title="Eliminar" class="btn btn-sm btn-secondary"><i class="fa fa-trash"></i></a>
-           </td>
-       </tr>
-       {{/each}}
-   </tbody>
-  </table>
+  
  </div>
 </div>
