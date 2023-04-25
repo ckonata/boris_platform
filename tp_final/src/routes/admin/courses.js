@@ -1,9 +1,33 @@
-var express = require('express');
-var router = express.Router();
-var courseModel = require('../../models/courseModel');
+const express = require('express');
+const router = express.Router();
+const courseModel = require('../../models/courseModel');
+var util = require('util');
+var cloudinary = require('cloudinary').v2;
+var uploader = util.promisify(cloudinary.uploader.upload);
+
 
 router.get('/', async function(req, res, next) {
  let courses = await courseModel.getCourses();
+
+ courses = courses.map(course => {
+  if(course.img_id){
+    const image = cloudinary.image(course.img_id, {
+      width: 100,
+      height: 100,
+      crop: 'fill'
+    });
+    return {
+      ...course,
+      image
+    }
+  }else{
+    return{
+      ...course,
+      image: ''
+    }
+  }
+ });
+
  res.render('admin/courses', { 
   layout: 'admin/layout',
   usuario: req.session.name,
@@ -18,8 +42,18 @@ router.get('/addCourse', (req, res, next) => {
 
 router.post('/addCourse', async (req, res, next) => {
  try {
+  let img_id = "";
+  console.log("req",req)
+  console.log("files",req.files)
+  if(req.files && Object.keys(req.files).length > 0){
+    img_id = (await uploader(req.files.image.tempFilePath)).public_id;
+    console.log("img_id",img_id);
+  }
   if (req.body.name !="" && req.body.description != "") {
-   await courseModel.addCourses(req.body);
+   await courseModel.addCourses({
+    ...req.body,
+    image: img_id,
+   });
    res.redirect('/admin/courses')
   } else {
    res.render('admin/cursos/addCourse', {
@@ -48,6 +82,7 @@ router.post('/updateCourse', async (req, res, next) => {
   let course = {
    name: req.body.name,
    description: req.body.description,
+   image: req.body.image,
    imageDescription: req.body.imageDescription,
   }
   await courseModel.updateCourse(course, req.body.id);
@@ -59,7 +94,6 @@ router.post('/updateCourse', async (req, res, next) => {
     message: 'No se modifico el curso'
   })
  }
-})
+});
 
-/
 module.exports = router;

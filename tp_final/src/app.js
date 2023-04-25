@@ -11,7 +11,14 @@ const session = require('express-session');
 const loginRouter = require('./routes/admin/login');
 const coursesRouter = require('./routes/admin/courses');
 
+const fileUpload = require('express-fileupload');
+
 const app = express();
+
+app.use(fileUpload({
+  useTempFiles: true,
+  tempFileDir: '/tmp/'
+}));
 
 //handlebars setup
 app.set('views', path.join(__dirname, 'views'));
