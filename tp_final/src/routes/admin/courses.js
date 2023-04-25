@@ -61,23 +61,5 @@ router.post('/updateCourse', async (req, res, next) => {
  }
 })
 
-router.get('/updateCourse/:id', async (req, res, next) => {
- try{
-  const id = req.params.id;
-  let course = await courseModel.getCourse(id);
-  console.log(course)
-  res.render('admin/updateCourse', {
-    layout: 'admin/layout',
-    course
-  });
- }catch(error){
-  console.log(error)
-  res.render('admin/updateCourse', {
-    layout: 'admin/layout',
-    error: true,
-    message: 'No se modifico el curso'
-  })
- }
-});
-
+/
 module.exports = router;
