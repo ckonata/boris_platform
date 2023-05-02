@@ -17,6 +17,10 @@
     <div class="form-group">
      <label class="text-primary fw-bold m-1">Subir imagen:
      <input type="file" class="form-control" name="image" id="image" /></label>
+     <label>
+      <input type="checkbox" name="deleteImage" id="deleteImage" value="1">¿Desea eliminar la imagen actual?
+     </label>
+    <input type="hidden" name="originalImage" value="{{course.image}}">
     </div>
     <div class="form-group">
      <label for="imageDescription" class="text-primary fw-bold m-1">Descripcion imagen</label>

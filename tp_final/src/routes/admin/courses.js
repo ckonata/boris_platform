@@ -88,10 +88,22 @@ router.get('/updateCourse/:id', async (req, res, next) => {
 
 router.post('/updateCourse', async (req, res, next) => {
  try {
-  let img_id = "";
-  if(req.files && Object.keys(req.files).length > 0){
+  let img_id = req.body.originalImage;
+  let deleteOriginalImage = false;
+
+  if (req.body.deleteImage === "1") {
+    img_id = null;
+    deleteOriginalImage = true;
+  }
+
+  if (req.files && Object.keys(req.files).length > 0) {
     img_id = (await uploader(req.files.image.tempFilePath)).public_id;
-    await (destroy(req.files.image));
+    deleteOriginalImage = true;
+  }
+
+
+  if (deleteOriginalImage && req.body.originalImage) {
+    await (destroy(req.body.originalImage));
   }
 
   let course = {
@@ -100,8 +112,6 @@ router.post('/updateCourse', async (req, res, next) => {
    image: img_id,
    imageDescription: req.body.imageDescription,
   }
-
-  console.log("updatedCourse", course)
 
   await courseModel.updateCourse(course, req.body.id);
   res.redirect('/admin/courses');
