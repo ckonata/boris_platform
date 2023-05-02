@@ -4,6 +4,7 @@ const courseModel = require('../../models/courseModel');
 var util = require('util');
 var cloudinary = require('cloudinary').v2;
 var uploader = util.promisify(cloudinary.uploader.upload);
+const destroy = util.promisify(cloudinary.uploader.destroy);
 
 
 router.get('/', async function(req, res, next) {
@@ -16,7 +17,6 @@ router.get('/', async function(req, res, next) {
         height: 150, 
         crop: "fill"
       });
-console.log(image)
     return {
       ...course,
       image
@@ -44,11 +44,9 @@ router.get('/addCourse', (req, res, next) => {
 router.post('/addCourse', async (req, res, next) => {
  try {
   let img_id = "";
-  console.log("req",req)
-  console.log("files",req.files)
+
   if(req.files && Object.keys(req.files).length > 0){
     img_id = (await uploader(req.files.image.tempFilePath)).public_id;
-    console.log("img_id",img_id);
   }
   if (req.body.name !="" && req.body.description != "") {
    await courseModel.addCourses({
@@ -78,21 +76,40 @@ router.get('/deleteCourse/:id', async (req, res, next) => {
  res.redirect('/admin/courses')
 });
 
+router.get('/updateCourse/:id', async (req, res, next) => {
+  let id = req.params.id;
+  var course = await courseModel.getCourse(id);
+  console.log(course)
+  res.render('admin/updateCourse', {
+    layout: 'admin/layout',
+    course
+  });
+});
+
 router.post('/updateCourse', async (req, res, next) => {
  try {
+  let img_id = "";
+  if(req.files && Object.keys(req.files).length > 0){
+    img_id = (await uploader(req.files.image.tempFilePath)).public_id;
+    await (destroy(req.files.image));
+  }
+
   let course = {
    name: req.body.name,
    description: req.body.description,
-   image: req.body.image,
+   image: img_id,
    imageDescription: req.body.imageDescription,
   }
+
+  console.log("updatedCourse", course)
+
   await courseModel.updateCourse(course, req.body.id);
   res.redirect('/admin/courses');
  } catch (error) {
   res.render('admin/updateCourse', {
     layout: 'admin/layout',
     error: true,
-    message: 'No se modifico el curso'
+    message: `No se modifico el curso: ${error}`
   })
  }
 });

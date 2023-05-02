@@ -2,7 +2,7 @@
  <div class="row">
   <div class="col-6 offset-3">
    <h4>Actualizar Curso</h4>
-   <form action="/admin/courses/updateCourse" method="post">
+   <form action="/admin/courses/updateCourse" method="post" enctype="multipart/form-data">
     <div class="form-group">
      <input type="hidden" value="{{course.id}}" name="id">
     </div>
@@ -15,12 +15,8 @@
      <textarea id="description" rows="4" cols="50" type="text" class="form-control" placeholder="Descripcion" name="description">{{course.description}}</textarea>
     </div>
     <div class="form-group">
-     <label class="text-primary fw-bold m-1">Agregar/Actualizar imagen: 
-      <input type="file" class="form-control" name="image" id="image" />
-     </label>
-     <label>
-      <input type="checkbox" name="img_delete" id="img_delete" value="1">Eliminar imagen actual</label>
-      <input type="hidden" name="img_original" value="{{course.img_id}}">
+     <label class="text-primary fw-bold m-1">Subir imagen:
+     <input type="file" class="form-control" name="image" id="image" /></label>
     </div>
     <div class="form-group">
      <label for="imageDescription" class="text-primary fw-bold m-1">Descripcion imagen</label>

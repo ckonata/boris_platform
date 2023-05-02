@@ -25,7 +25,7 @@ const updateCourse = async (course, courseId) => {
  try{
   let query = 'UPDATE courses SET ? WHERE id = ?';
   let updatedCourse = await pool.query(query, [course, courseId]);
-  return updateCourse;
+  return updatedCourse;
  }catch(error){
   throw error;
  }
