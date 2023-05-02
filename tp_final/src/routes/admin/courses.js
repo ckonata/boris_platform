@@ -10,12 +10,13 @@ router.get('/', async function(req, res, next) {
  let courses = await courseModel.getCourses();
 
  courses = courses.map(course => {
-  if(course.img_id){
-    const image = cloudinary.image(course.img_id, {
-      width: 100,
-      height: 100,
-      crop: 'fill'
-    });
+  if(course.image != null){
+    const image = cloudinary.url(course.image, 
+      { width: 100, 
+        height: 150, 
+        crop: "fill"
+      });
+console.log(image)
     return {
       ...course,
       image
