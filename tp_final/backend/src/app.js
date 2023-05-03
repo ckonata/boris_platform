@@ -10,6 +10,8 @@ const session = require('express-session');
 
 const loginRouter = require('./routes/admin/login');
 const coursesRouter = require('./routes/admin/courses');
+const apiRouter = require('./routes/api');
+const cors = require('cors');
 
 const fileUpload = require('express-fileupload');
 
@@ -40,6 +42,8 @@ app.use(session( {
   resave: false,
   saveUninitialized: true
 }));
+
+app.use('/api', cors(), apiRouter); 
 
 app.use('/', loginRouter);
 app.use('/admin/login', loginRouter);

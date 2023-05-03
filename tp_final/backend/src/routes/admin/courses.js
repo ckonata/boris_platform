@@ -79,7 +79,6 @@ router.get('/deleteCourse/:id', async (req, res, next) => {
 router.get('/updateCourse/:id', async (req, res, next) => {
   let id = req.params.id;
   var course = await courseModel.getCourse(id);
-  console.log(course)
   res.render('admin/updateCourse', {
     layout: 'admin/layout',
     course

@@ -1,0 +1,84 @@
+#hero{
+ display: flex;
+}
+
+#hero-black{
+ background-color: black;
+ color: #F1F0EC;
+ display: flex;
+ flex-direction: column;
+ height: 60vh;
+}
+
+#hero-black h1{
+ background-color: black;
+}
+
+#hero-black a{
+ color: #FF4900;
+ border: 1px solid #FF4900;
+ padding: .3rem 1.2rem;
+ font-size: 1.5rem;
+ text-transform: uppercase;
+ margin-top: 5rem;
+}
+
+#hero-black a:hover{
+ color: #F1F0EC;
+ border: 1px solid #F1F0EC;
+ transition: ease .8s;
+}
+
+.access__form-item{
+ display: flex;
+ margin-bottom: 1rem;
+}
+
+.access__form-item label,
+.contact form label{
+ font-weight: 700;
+ letter-spacing: 3px;
+ width: 8rem;
+ display: block;
+ background-color: #FF4900;
+}
+
+.contact form label{
+ background-color:  #F1F0EC;
+}
+
+.access__form-item input,
+.contact form input{
+ background-color:  #F1F0EC;
+ font-weight: 200;
+ color: black;
+ font-size: .7rem;
+}
+
+.access__button{
+ cursor: pointer;
+ color: #FF4900;
+
+}
+
+.access__button:hover{
+ background-color: black;
+ color: #F1F0EC;
+ transition: ease-out .8s;
+}
+
+.access__register{
+ color: black;
+ font-weight: 700;
+}
+
+.access__button,
+.contact form button{
+ background-color:  #F1F0EC;
+ font-weight: 700;
+ color: black;
+ font-size: 1rem;
+ border: 1px solid black;
+ padding: .5rem 3rem;
+ width: 100%;
+}
