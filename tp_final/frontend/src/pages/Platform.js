@@ -8,11 +8,11 @@ const Platform = () => {
           <h1 className="hero__title">Accede a la plataforma</h1>
           <form action="POST">
               <div className="access__form-item">
-                  <label for="user">Usuario</label>
+                  <label htmlFor="user">Usuario</label>
                   <input type="text" id="user" name="user" placeholder="jDoe" />
               </div>
               <div className="access__form-item">
-                  <label for="pw">Contraseña</label>
+                  <label htmlFor="pw">Contraseña</label>
                   <input type="pw" id="pw" name="pw" placeholder="*********" />
               </div>
               <button className="access__button">Ingresar</button>

@@ -7,7 +7,7 @@ import { Traction } from "./Traction";
 
 const MainAbout = () =>{
  return(
-  <main class="main-light">
+  <main className="main-light">
    <AboutTitle />
    <Traction />
    <HeroAbout />

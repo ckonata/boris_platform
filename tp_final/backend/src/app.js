@@ -13,6 +13,7 @@ const coursesRouter = require('./routes/admin/courses');
 const apiRouter = require('./routes/api');
 const cors = require('cors');
 
+
 const fileUpload = require('express-fileupload');
 
 const app = express();
@@ -43,7 +44,7 @@ app.use(session( {
   saveUninitialized: true
 }));
 
-app.use('/api', cors(), apiRouter); 
+
 
 app.use('/', loginRouter);
 app.use('/admin/login', loginRouter);
@@ -57,9 +58,12 @@ const secured = async (req, res, next) => {
   }
 };
 app.use('/admin/courses', secured, coursesRouter);
+app.use('/api', cors(), apiRouter);
 
 app.use(function(req, res, next) {
   next(createError(404));
 });
+
+
 
 module.exports = app;
