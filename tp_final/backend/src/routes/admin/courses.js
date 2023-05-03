@@ -44,10 +44,15 @@ router.get('/addCourse', (req, res, next) => {
 router.post('/addCourse', async (req, res, next) => {
  try {
   let img_id = "";
-
+  console.log("subiendo imagen")
   if(req.files && Object.keys(req.files).length > 0){
+    console.log("super subiendo imagen")
+    console.log("req.files.image.tempFilePath", req.files.image.tempFilePath)
     img_id = (await uploader(req.files.image.tempFilePath)).public_id;
   }
+
+  console.log("se subio:", img_id)
+  console.log("req.body", req.body)
   if (req.body.name !="" && req.body.description != "") {
    await courseModel.addCourses({
     ...req.body,

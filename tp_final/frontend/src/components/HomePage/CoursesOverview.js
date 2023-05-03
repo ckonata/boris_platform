@@ -6,22 +6,22 @@ const CoursesOverview = () =>{
   {
    "id": 1,
    "title": "Liderazgo de equipos remotos",
-   "link": "courses.html#equipo_remoto"
+   "link": "courses"
   },
   {
    "id": 2,
    "title": "El arte de comunicarse efectivamente",
-   "link": "courses.html#comunicacion_efectiva"
+   "link": "courses"
   },
   {
    "id": 3,
    "title": "Liderazgo e inteligencia emocional",
-   "link": "courses.html#inteligencia_emocional"
+   "link": "courses"
   },
   {
    "id": 4,
    "title": "Negociacion efectiva a distancia",
-   "link": "courses.html#negociacion"
+   "link": "courses"
   }];
 
  return(

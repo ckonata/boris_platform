@@ -10,6 +10,7 @@ footer{
 .footer__contact{
  display: flex;
  justify-content: space-between;
+ margin-bottom: 2rem;
 }
 
 footer div h3{
@@ -54,6 +55,10 @@ form button{
 .social__icon{
  color: #F1F0EC;
  margin: 1rem;
+}
+
+.social__title{
+ margin: 1rem 0 3rem 0;
 }
 
 .social__icon:hover{

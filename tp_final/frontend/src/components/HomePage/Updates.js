@@ -6,21 +6,21 @@ const Updates = () =>{
         {   
             "id": 1,
             "title": "Trabajo en equipo",
-            "link": "courses.html#equipo_trabajo",
+            "link": "courses",
             "image": "images/alfred-aloushy-Ow-joAY8NyY-unsplash.jpg",
             "imageDesc": "Hombre solo en la montaña"
         },
         {   
             "id": 2,
             "title": "Como ser efectivos: Automotivacion para alcanzar objetivos",
-            "link": "courses.html#automotivacion",
+            "link": "courses",
             "image": "images/markus-spiske-QozzJpFZ2lg-unsplash.jpg",
             "imageDesc": "Liderazgo"
         },
         {   
             "id": 3,
             "title": "Como ser un buen jefe",
-            "link": "courses.html#buen_jefe",
+            "link": "courses",
             "image": "images/jason-goodman-Oalh2MojUuk-unsplash.jpg",
             "imageDesc": "Equipo trabajando"
         }

@@ -60,9 +60,9 @@ router.post('/contact', async (req, res) => {
 router.post('/contacto', async (req, res) => {
  const mail = {
    to: 'info@boris.com',
-   subject: '<b> Nuevo mensaje de contacto - Boris </b>',
-   html: `<b> ${req.body.userName} </b> se contactó a través de la web de <b>Artan</b>
-   <br><b> Asunto:</b>  ${req.body.subject} 
+   subject: 'Nuevo mensaje de contacto - Boris',
+   html: `<b> ${req.body.userName} </b> se contactó a través de la web de <b>Boris</b>
+   <br><b> Asunto:</b>  ${req.body.subject}
    <br><b> Mail a quien responder:</b>  ${req.body.email}
    <br><b> Mensaje </b> ${req.body.comment}`
  }
