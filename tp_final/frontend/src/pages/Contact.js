@@ -5,7 +5,7 @@ import axios from 'axios';
 const Contact = () => {
 
     const initialForm = {
-        nombre: '',
+        userName: '',
         email: '',
         telefono: '',
         mensaje: ''
@@ -36,33 +36,36 @@ const Contact = () => {
     }
 }
 return (
-    <main className="holder-contacto">
-        <div id="formcontacto">
-            <h1>Contactanos</h1>
-            <form action="" method="" className="formulario" onSubmit={handleSubmit}>
-                <p>
-                    <label for="nombre">Nombre </label>
-                    <input type="text" name="nombre" value={formData.nombre} onChange={handleChange} />
-                </p>
-                <p>
+    <>
+        <div className="contact">
+            <div>
+                <h1>Contactanos</h1>
+                <p>¿Tenes alguna duda, comentario o sugerencia? Completa el formulario y te responderemos a la brevedad.</p>
+            </div>
+            <form action="" method="" onSubmit={handleSubmit}>
+                <div class="contact__form-item">
+                    <label for="userName">Nombre </label>
+                    <input type="text" name="userName" value={formData.userName} onChange={handleChange} />
+                </div>
+                <div class="contact__form-item">
                     <label for="email">Email </label>
                     <input type="text" name="email" value={formData.email} onChange={handleChange}/>
-                </p>
-                <p>
-                    <label for="telefono">Telefono </label>
-                    <input type="text" name="telefono" value={formData.telefono} onChange={handleChange} />
-                </p>
-                <p id="cont_mensaje">
-                    <label for="mensaje">Mensaje </label>
-                    <textarea name="mensaje" value={formData.mensaje} onChange={handleChange}></textarea>
-                </p>
+                </div>
+                <div class="contact__form-item">
+                    <label for="subject">Asunto </label>
+                    <input type="text" name="subject" value={formData.subject} onChange={handleChange} />
+                </div>
+                <div class="contact__form-item">
+                    <label for="comment">Comentario </label>
+                    <textarea name="comment" value={formData.comment} onChange={handleChange}></textarea>
+                </div>
                 <p class="acciones"><input type="submit" value="Enviar" />
                 </p>
                 {sending ? <p>Enviando...  </p> : null}
                 {msg ? <p>{msg}</p> : null}
             </form>
         </div>
-    </main>
+    </>
 );
 }
 

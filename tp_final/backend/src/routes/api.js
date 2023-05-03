@@ -59,12 +59,12 @@ router.post('/contact', async (req, res) => {
 
 router.post('/contacto', async (req, res) => {
  const mail = {
-   to: 'artanescuela@gmail.com',
-   subject: '<b> Contacto Artan </b>',
-   html: `<b> ${req.body.nombre} </b> se contactó a través de la web de <b>Artan</b>
-   <br><b> Mensaje: ${req.body.mensaje} 
-   <br><b>Mail de respuesta: ${req.body.email}
-   <br><b> Teléfono de contacto </b> ${req.body.telefono}`
+   to: 'info@boris.com',
+   subject: '<b> Nuevo mensaje de contacto - Boris </b>',
+   html: `<b> ${req.body.userName} </b> se contactó a través de la web de <b>Artan</b>
+   <br><b> Asunto:</b>  ${req.body.subject} 
+   <br><b> Mail a quien responder:</b>  ${req.body.email}
+   <br><b> Mensaje </b> ${req.body.comment}`
  }
 
  const transport = nodemailer.createTransport({
@@ -80,7 +80,7 @@ router.post('/contacto', async (req, res) => {
 
  res.status(201).json({
    error: false,
-   message: 'Mensaje enviado'
+   message: 'Mensaje enviado. Sera contactado a la brevedad.'
  });
 
 });
