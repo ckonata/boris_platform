@@ -18,3 +18,5 @@ Librerias utilizadas:
 - Bcryptjs
 - Passport
 - Mysql2
+- Nodemailer
+- Cloudinary
