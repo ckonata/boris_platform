@@ -6,4 +6,9 @@ CREATE TABLE users(
  password VARCHAR(250) NOT NULL
 );
 
-INSERT INTO courses (name, password) VALUES ('cziemba', 'pass123');
+INSERT INTO `boris`.`users`
+(
+`name`,
+`password`)
+VALUES
+("boris", "123");
