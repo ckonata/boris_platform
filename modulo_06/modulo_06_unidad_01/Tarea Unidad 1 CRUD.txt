@@ -1,9 +1,0 @@
-El sitio web cuenta con un listado de cursos que se muestran tanto en la pagina principal (home) como en la seccion de cursos.
-De cada curso se muestra:
-- Nombre
-- Descripcion
-- Imagen
-
-Estos campos seran dinamicos, donde la informacion se almacenara en una base de datos:
-- tabla: cursos
-- columnas: id (INT PK AUTO_INCREMENT), nombre (VARCHAR(100)), descripcion (VARCHAR(200)), imagen (VARCHAR(400))
