@@ -21,4 +21,4 @@ Librerias utilizadas:
 - Nodemailer
 - Cloudinary
 
-[Curso](https://sceu.frba.utn.edu.ar/e-learning/detalle/diplomatura/1479/professional-full-stack-developer)
+[Curso](https://utnba.centrodeelearning.com/detalle/diplomatura/1969/diplomatura-en-programacion-web-full-stack-con-react-js)
